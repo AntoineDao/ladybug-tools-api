@@ -18,7 +18,7 @@ class DevelopmentConfig(Config):
     # SQLALCHEMY_DATABASE_URI = postgres_local_base
     DEBUG = True
     SQLALCHEMY_DATABASE_URI =\
-        "postgresql:///{db_name}"\
+        "postgresql://postgres@/{db_name}"\
         .format(db_name=db_name)
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -34,7 +34,7 @@ class TestingConfig(Config):
     #     .format(user=user, pword=pword, server_ip=server_ip, port=port)
 
     SQLALCHEMY_DATABASE_URI =\
-        "postgresql:///{db_name}"\
+        "postgresql://postgres@/{db_name}"\
         .format(db_name=db_name)
 
     PRESERVE_CONTEXT_ON_EXCEPTION = False

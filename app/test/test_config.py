@@ -19,7 +19,7 @@ class TestDevelopmentConfig(TestCase):
         self.assertFalse(current_app is None)
         self.assertTrue(
             app.config['SQLALCHEMY_DATABASE_URI'] ==
-            'postgresql:///ladybugtools'
+            'postgresql://postgres@/ladybugtools'
         )
 
 
@@ -33,7 +33,7 @@ class TestTestingConfig(TestCase):
         self.assertTrue(app.config['DEBUG'])
         self.assertTrue(
             app.config['SQLALCHEMY_DATABASE_URI'] ==
-            'postgresql:///ladybugtools_test'
+            'postgresql://postgres@/ladybugtools_test'
         )
 
 
