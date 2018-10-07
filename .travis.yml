@@ -4,6 +4,7 @@ services:
 before_script:
   - psql -c 'create database ladybugtools_test;' -U postgres
   - psql -c 'create database ladybugtools;' -U postgres
+  - psql -c 'create extension if not exists "uuid-osp";' -U postgres
 
 language: python
 
