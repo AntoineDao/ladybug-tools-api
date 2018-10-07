@@ -14,7 +14,7 @@ class Config:
 class DevelopmentConfig(Config):
     # hard coded for now
     user = "postgres"
-    pword = "supersecretpassword"
+    pword = ""
     server_ip = "127.0.0.1"
     port = "5432"
     db_name = "ladybugtools"
@@ -23,7 +23,7 @@ class DevelopmentConfig(Config):
     # SQLALCHEMY_DATABASE_URI = postgres_local_base
     DEBUG = True
     SQLALCHEMY_DATABASE_URI =\
-        "postgresql://{user}:{pword}@{server_ip}:{port}/{db_name}"\
+        "postgresql://{user}@{server_ip}:{port}/{db_name}"\
         .format(user=user, pword=pword, server_ip=server_ip, port=port,
                 db_name=db_name)
 
@@ -33,19 +33,19 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     # hard coded for now
     user = "postgres"
-    pword = "supersecretpassword"
+    pword = ""
     server_ip = "127.0.0.1"
     port = "5432"
     db_name = "ladybugtools_test"
 
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_SERVER_URI =\
-        "postgresql://{user}:{pword}@{server_ip}:{port}"\
-        .format(user=user, pword=pword, server_ip=server_ip, port=port)
+    # SQLALCHEMY_SERVER_URI =\
+    #     "postgresql://"\
+    #     .format(user=user, pword=pword, server_ip=server_ip, port=port)
 
     SQLALCHEMY_DATABASE_URI =\
-        "postgresql://{user}:{pword}@{server_ip}:{port}/{db_name}"\
+        "postgresql:///{db_name}"\
         .format(user=user, pword=pword, server_ip=server_ip, port=port,
                 db_name=db_name)
 
