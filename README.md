@@ -1,4 +1,4 @@
-#### FLASK RESTFUL API BOILER-PLATE WITH JWT
+#### Ladybug Tools CRUD API
 
 [![Build Status](https://travis-ci.com/AntoineDao/ladybug-tools-crud-API.svg?branch=master)](https://travis-ci.com/AntoineDao/ladybug-tools-crud-API)
 
@@ -33,6 +33,9 @@
 
 ### Contributing
 If you want to contribute to this Ladybug Tools API server clone the repository and just start making pull requests.
+
+### Local Development
+A PostgreSQL database is required in order to develop this project locally. More detailed instructions will be added soon on how to set up the database locally and ensuring it is setup in a way that will play nicely with the testing configuration.
 
 ### Shoulders of giants
 I cannot thank [`cosmic-byte`](https://github.com/cosmic-byte) enough for their thorough article walking through how to build a
