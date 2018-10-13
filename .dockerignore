@@ -1,0 +1,14 @@
+# migrations
+migrations/
+
+# version control
+.git/
+
+# cache
+__pycache__/
+
+# virtualenv
+venv/
+
+# tests
+test/

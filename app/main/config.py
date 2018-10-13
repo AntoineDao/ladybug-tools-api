@@ -49,6 +49,20 @@ class TestingConfig(Config):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
+class DockerConfig(Config):
+    db_name = "ladybugtools"
+
+    DEBUG = True
+
+    SQLALCHEMY_DATABASE_URI = \
+        "postgresql://{user}:{password}@postgres:{port}"\
+        .format(user=Config.postgres_user,
+                password=Config.postgres_password,
+                port=Config.postgres_port)
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
 class ProductionConfig(Config):
     DEBUG = False
     # uncomment the line below to use postgres
@@ -58,7 +72,8 @@ class ProductionConfig(Config):
 config_by_name = dict(
     dev=DevelopmentConfig,
     test=TestingConfig,
-    prod=ProductionConfig
+    prod=ProductionConfig,
+    docker=DockerConfig
 )
 
 key = Config.SECRET_KEY
