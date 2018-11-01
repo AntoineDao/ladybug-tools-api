@@ -8,14 +8,10 @@ from app import blueprint
 from app.main import create_app, db
 from app.main.model import user, blacklist
 
-app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
+app = create_app(os.getenv('FLASK_ENV') or 'dev')
 app.register_blueprint(blueprint)
 
 app.app_context().push()
-
-# Adds autoincrementing UUID capability to PostgreSQL
-uuid_extension_sql = "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";"
-db.engine.execute(uuid_extension_sql)
 
 manager = Manager(app)
 
@@ -38,6 +34,11 @@ def test():
         return 0
     return 1
 
+@manager.command
+def start_docker():
+    db.engine.execute('create extension if not exists "uuid-ossp";')
+    db.create_all()
+    app.run(host="0.0.0.0")
 
 if __name__ == '__main__':
     manager.run()
