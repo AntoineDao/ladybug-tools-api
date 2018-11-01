@@ -1,6 +1,6 @@
 #### Ladybug Tools CRUD API
 
-[![Build Status](https://travis-ci.com/AntoineDao/ladybug-tools-crud-API.svg?branch=master)](https://travis-ci.com/AntoineDao/ladybug-tools-crud-API)
+[![Build Status](https://travis-ci.org/ladybug-tools/ladybug-tools-api.svg?branch=master)](https://travis-ci.org/ladybug-tools/ladybug-tools-api)
 
 
 ### Terminal commands
